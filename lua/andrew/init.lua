@@ -6,6 +6,3 @@ require("andrew.lazy_init")
 require("andrew.formatting")
 -- key remaps
 require("andrew.remaps")
-
--- set colorscheme
-vim.cmd [[colorscheme tokyonight]]
