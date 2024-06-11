@@ -22,3 +22,6 @@ vim.keymap.set({ "n", "v" }, "<C-_>", ":Commentary<CR>")
 -- <leader> left / right to switch buffers
 vim.keymap.set("n", "<leader><Left>", ":bp<CR>")
 vim.keymap.set("n", "<leader><Right>", ":bn<CR>")
+
+-- floaterm
+vim.keymap.set("n", "<leader>t", ":FloatermToggle<CR>")
