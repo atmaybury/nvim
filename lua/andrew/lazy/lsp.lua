@@ -3,6 +3,7 @@ return {
   { 'williamboman/mason.nvim' },
   { 'williamboman/mason-lspconfig.nvim' },
   -- lsp-zero
+  { 'neovim/nvim-lspconfig' },
   {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v3.x',
@@ -16,13 +17,26 @@ return {
       -- setup mason for lsp-zero downloads
       require('mason').setup({})
       require('mason-lspconfig').setup({
+        -- ensure_installed = { 'tsserver' },
         handlers = {
           lsp_zero.default_setup,
+          tsserver = function()
+            require('lspconfig').tsserver.setup({
+              on_attach = lsp_zero.on_attach,
+              capabilities = lsp_zero.get_capabilities(),
+              settings = {
+                typescript = {
+                  preferences = {
+                    importModuleSpecifierPreference = 'non-relative'
+                  }
+                }
+              }
+            })
+          end
         },
       })
     end
   },
-  { 'neovim/nvim-lspconfig' },
   { 'hrsh7th/cmp-nvim-lsp' },
   {
     'hrsh7th/nvim-cmp',
