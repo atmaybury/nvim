@@ -11,8 +11,21 @@ return {
       -- setup lsp-zero
       local lsp_zero = require('lsp-zero')
       lsp_zero.extend_lspconfig()
+
       lsp_zero.on_attach(function(client, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
+
+        -- Add a buffer-local command to organize imports
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          callback = function()
+            -- Use tsserver to organize imports before formatting
+            vim.lsp.buf.execute_command({
+              command = "_typescript.organizeImports",
+              arguments = { vim.api.nvim_buf_get_name(bufnr) },
+            })
+          end,
+        })
       end)
 
       -- setup mason for lsp-zero downloads
