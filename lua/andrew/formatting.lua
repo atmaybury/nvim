@@ -1,6 +1,6 @@
 -- Set tab widths for different file types
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact", "lua" },
+  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact", "lua", "json" },
   callback = function()
     vim.bo.tabstop = 2
     vim.bo.shiftwidth = 2
