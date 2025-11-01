@@ -5,8 +5,23 @@ return {
   keys = {
     {
       "<leader>xx",
-      vim.diagnostic.open_float,
+      "<cmd>Trouble diagnostics toggle<cr>",
       desc = "Diagnostics (Trouble)",
+    },
+    -- {
+    --   "<leader>xx",
+    --   vim.diagnostic.open_float,
+    --   desc = "Diagnostics (Trouble)",
+    -- },
+    {
+      "<leader>dn",
+      vim.diagnostic.goto_next,
+      desc = "Next diagnostic",
+    },
+    {
+      "<leader>dp",
+      vim.diagnostic.goto_prev,
+      desc = "Previous diagnostic",
     },
   }
 }

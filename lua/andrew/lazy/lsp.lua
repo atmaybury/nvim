@@ -1,47 +1,19 @@
 return {
   -- mason
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  -- lsp-zero
-  { 'neovim/nvim-lspconfig' },
+  { 'mason-org/mason.nvim', opts = {} },
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    config = function()
-      -- setup lsp-zero
-      local lsp_zero = require('lsp-zero')
-      lsp_zero.extend_lspconfig()
-
-      lsp_zero.on_attach(function(client, bufnr)
-        lsp_zero.default_keymaps({ buffer = bufnr })
-      end)
-
-      -- setup mason for lsp-zero downloads
-      require('mason').setup({})
-      require('mason-lspconfig').setup({
-        -- ensure_installed = { 'tsserver' },
-        handlers = {
-          lsp_zero.default_setup,
-          tsserver = function()
-            require('lspconfig').tsserver.setup({
-              on_attach = lsp_zero.on_attach,
-              capabilities = lsp_zero.get_capabilities(),
-              settings = {
-                typescript = {
-                  preferences = {
-                    importModuleSpecifierPreference = 'non-relative'
-                  }
-                }
-              }
-            })
-          end
-        },
-      })
-    end
+    'mason-org/mason-lspconfig.nvim',
+    opts = {},
   },
-  { 'hrsh7th/cmp-nvim-lsp' },
+  -- lsp config
+  { 'neovim/nvim-lspconfig' },
+  -- autocompletion
   {
     'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'L3MON4D3/LuaSnip'
+    },
     config = function()
       local cmp = require('cmp')
       cmp.setup({
@@ -67,5 +39,4 @@ return {
       })
     end
   },
-  { 'L3MON4D3/LuaSnip' },
 }
