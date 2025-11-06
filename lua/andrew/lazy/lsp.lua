@@ -6,7 +6,17 @@ return {
     opts = {},
   },
   -- lsp config
-  { 'neovim/nvim-lspconfig' },
+  {
+    'neovim/nvim-lspconfig',
+
+    'neovim/nvim-lspconfig',
+    config = function()
+      -- Example: setup for pyright
+      require('lspconfig').pyright.setup({})
+      -- Hover info keybinding
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Hover Info' })
+    end
+  },
   -- autocompletion
   {
     'hrsh7th/nvim-cmp',
