@@ -8,6 +8,9 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 -- close buffer
 vim.keymap.set('n', '<leader>q', ":bd<CR>")
 
+-- open Oil
+vim.keymap.set('n', '<leader>o', ":Oil<CR>")
+
 -- centre after using ctrl-u / ctrl-d
 vim.keymap.set({ "n", "v" }, "<C-u>", "<C-d>zz")
 vim.keymap.set({ "n", "v" }, "<C-d>", "<C-d>zz")
