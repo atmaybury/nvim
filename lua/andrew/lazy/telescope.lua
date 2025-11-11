@@ -13,7 +13,7 @@ return {
     })
 
     -- Keymap to toggle layout strategy
-    vim.keymap.set("n", "<leader>tl", function()
+    vim.keymap.set("n", "<leader>fl", function()
       layout = layout == "vertical" and "horizontal" or "vertical"
       telescope.setup({
         defaults = {
