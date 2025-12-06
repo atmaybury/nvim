@@ -4,7 +4,7 @@ return {
   config = function()
     local telescope = require("telescope")
 
-    local layout = "vertical"
+    local layout = "horizontal"
 
     telescope.setup({
       defaults = {
