@@ -8,11 +8,16 @@ return {
   -- lsp config
   {
     'neovim/nvim-lspconfig',
-
-    'neovim/nvim-lspconfig',
     config = function()
-      -- Example: setup for pyright
-      require('lspconfig').pyright.setup({})
+      vim.lsp.config.pyright = {}
+      vim.lsp.config.cucumber_language_server = {
+        settings = {
+          cucumber = {
+            features = { "**/*.feature" },
+            glue = { "**/*.step.ts" }
+          }
+        }
+      }
       -- Hover info keybinding
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Hover Info' })
     end
