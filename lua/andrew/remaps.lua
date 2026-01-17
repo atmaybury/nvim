@@ -1,12 +1,3 @@
--- telescope remappings
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
-vim.keymap.set('n', '<leader>fm', builtin.lsp_document_symbols, {})
-
 -- close buffer
 vim.keymap.set('n', '<leader>q', ":bd<CR>")
 
@@ -26,6 +17,10 @@ vim.keymap.set({ "n", "v" }, "<C-_>", ":Commentary<CR>")
 -- <leader> left / right to switch buffers
 vim.keymap.set("n", "<leader><Left>", ":bp<CR>")
 vim.keymap.set("n", "<leader><Right>", ":bn<CR>")
+
+-- Tab / Shift-Tab to switch buffers
+vim.keymap.set('n', '<A-l>', ":bn<CR>")
+vim.keymap.set('n', '<A-h>', ":bp<CR>")
 
 -- floaterm
 vim.keymap.set({ "n", "t" }, "<leader>t", "<C-\\><C-n>:FloatermToggle<CR>")
