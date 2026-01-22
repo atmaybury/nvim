@@ -11,6 +11,7 @@ return {
     config = function()
       vim.lsp.config.pyright = {}
       vim.lsp.config.cucumber_language_server = {
+        root_markers = { 'package.json' },
         settings = {
           cucumber = {
             features = { "**/*.feature" },
