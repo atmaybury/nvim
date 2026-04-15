@@ -18,14 +18,14 @@ return {
     -- Define your formatters
     formatters_by_ft = {
       python = { "ruff_format" },
-      javascript = { "prettier" },
-      javascriptreact = { "prettier" },
-      typescript = { "prettier" },
-      typescriptreact = { "prettier" },
-      yaml = { "prettier" },
-      json = { "prettier" },
-      graphql = { "prettier" },
-      cucumber = { "prettier" }
+      javascript = { "prettierd", "prettier", stop_after_first = true },
+      javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+      typescript = { "prettierd", "prettier", stop_after_first = true },
+      typescriptreact = { "prettierd", "prettier", stop_after_first = true },
+      yaml = { "prettierd", "prettier", stop_after_first = true },
+      json = { "prettierd", "prettier", stop_after_first = true },
+      graphql = { "prettierd", "prettier", stop_after_first = true },
+      cucumber = { "prettierd", "prettier", stop_after_first = true },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 1000, lsp_fallback = true },
