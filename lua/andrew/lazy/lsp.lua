@@ -21,6 +21,7 @@ return {
       }
       -- Hover info keybinding
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Hover Info' })
+      vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP Code Action' })
     end
   },
   -- autocompletion
