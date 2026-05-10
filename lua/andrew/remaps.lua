@@ -27,3 +27,6 @@ vim.keymap.set({ "n", "t" }, "<leader>t", "<C-\\><C-n>:FloatermToggle<CR>")
 
 -- jump to definition
 vim.keymap.set("n", "<leader>d", ":lua vim.lsp.buf.definition()<CR>")
+
+vim.keymap.set("n", "<up>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<down>", "<cmd>cnext<CR>")

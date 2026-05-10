@@ -8,8 +8,8 @@ return {
     opts = {
       window = {
         layout = "float",
-        width = 0.5,
-        height = 0.75,
+        width = 0.8,
+        height = 0.8,
       }
     },
     keys = {
@@ -19,6 +19,12 @@ return {
           require("CopilotChat").toggle()
         end,
         desc = "Toggle CopilotChat",
+      },
+      {
+        "<leader>ce",
+        ":CopilotChatExplain<CR>",
+        mode = "v",
+        desc = "CopilotChat: Explain selection",
       },
     },
   },
