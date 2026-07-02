@@ -19,8 +19,9 @@ return {
           }
         }
       }
+
       -- Hover info keybinding
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'LSP Hover Info' })
+      vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, { desc = 'LSP Hover Info' })
       vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'LSP Code Action' })
     end
   },
@@ -37,6 +38,10 @@ return {
         preselect = 'item',
         completion = {
           completeopt = 'menu,menuone,noinsert'
+        },
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
         },
         sources = {
           { name = 'nvim_lsp' },
