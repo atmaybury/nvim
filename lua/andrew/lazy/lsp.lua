@@ -11,11 +11,11 @@ return {
     config = function()
       vim.lsp.config.pyright = {}
       vim.lsp.config.cucumber_language_server = {
-        root_markers = { 'package.json' },
+        root_markers = { 'package.json', 'pyproject.toml', 'requirements.txt', 'behave.ini', '.git' },
         settings = {
           cucumber = {
             features = { "**/*.feature" },
-            glue = { "**/*.step.ts" }
+            glue = { "**/*.step.ts", "**/*.steps.py", "**/*_steps.py" }
           }
         }
       }
